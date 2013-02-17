@@ -6,17 +6,17 @@ import sys
 from  threading import Timer
 import random
 
+
+class PostgresHelper():
 """
 Helper class for pgsql 
 """
-class PostgresHelper():
-
     con = None
 
+    def __init__(self):
     """
     Constructor for connecting on PGSQL database
     """
-    def __init__(self):
         try:
             self.con = psycopg2.connect(database='riskdoctor', user='riskdoctor', password='riskdoctor') 
             
@@ -24,18 +24,19 @@ class PostgresHelper():
             print 'Error %s' % e    
             sys.exit(1)
 
+
+    def query_s(self, query = "SELECT id, ST_X(point) as lat, ST_Y(point) as lng FROM risk_management_site_car ORDER BY RANDOM() LIMIT 1"):
     """
     Method for SELECT random Car
     """
-    def query_s(self, query = "SELECT id, ST_X(point) as lat, ST_Y(point) as lng FROM risk_management_site_car ORDER BY RANDOM() LIMIT 1"):
         cur = self.con.cursor()
         cur.execute(query)          
         return cur.fetchone()
             
+    def query_u(self, query):
     """
     Method for executing query (UPDATE)
     """
-    def query_u(self, query):
         cur = self.con.cursor()
         cur.execute(query)          
         self.con.commit()
@@ -47,10 +48,10 @@ def checkLatLonValues(lat, lon):
         return True
     return False
 
+def periodicUpdate():
 """
 Function for periodic UPDATE of car locations on map
 """
-def periodicUpdate():
     global psql
     result_touple = psql.query_s()
 
