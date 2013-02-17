@@ -1,0 +1,30 @@
+{% extends "theme_base.html" %}
+
+{% load metron_tags %}
+{% load i18n %}
+
+{% block extra_style %}
+{% load staticfiles %}
+{% endblock %}
+
+{% block extra_head_base %}
+{% block extra_head %}
+{% endblock %}
+{% endblock %}
+
+{% block footer %}
+    {% include "_footer.html" %}
+{% endblock %}
+
+{% block extra_script %}
+<script src="{% static "js/homepage.js" %}"></script>
+<script src="{% static "js/bootstrap-multiselect.js" %}"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+</script>
+{% endblock %}
+
+{% block extra_body_base %}
+    {% analytics %}
+    {% block extra_body %}{% endblock %}
+{% endblock %}
+

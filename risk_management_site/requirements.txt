@@ -1,0 +1,13 @@
+Django==1.4.2
+Pinax==0.9a2
+South==0.7.6
+django-appconf==0.5
+django-forms-bootstrap==2.0.3.post1
+django-user-accounts==1.0b7
+metron==1.0
+pinax-theme-bootstrap==2.2.1
+pinax-theme-bootstrap-account==1.0b2
+pinax-utils==1.0b1.dev3
+psycopg2==2.4.6
+pytz==2012d
+wsgiref==0.1.2

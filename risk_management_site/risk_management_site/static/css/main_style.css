@@ -1,0 +1,26 @@
+body{
+    min-height:800px;
+    height: 800px;
+}
+
+
+
+#body_container {
+     min-height:650px;
+     height:auto !important;
+     height:700px;
+}
+
+#googleMap {
+    width: 1200px;
+    height: 750px;
+}
+
+#googleMap img[src*="gstatic.com/"], img[src*="googleapis.com/"]  {
+    max-width: 99999px;
+}
+
+.reserve-car {
+    margin-top: 2px;
+
+}

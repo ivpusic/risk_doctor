@@ -1,0 +1,10 @@
+body {
+    min-height:800px;
+    height: 800px;
+}
+
+.container {
+     min-height:650px;
+     height:auto !important;
+     height:700px;
+}
