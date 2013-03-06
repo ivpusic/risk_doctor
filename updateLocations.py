@@ -58,29 +58,24 @@ Function for periodic UPDATE of car locations on map
     rand = random.randint(1,4)
     
     if(rand == 1):
-        print "prvi!"
         lat = result_touple[1] + 0.01
         lon = result_touple[2]
 
     elif(rand == 2):
-        print "drugi!"
         lat = result_touple[1]
         lon = result_touple[2] + 0.01
 
     elif(rand == 3):
-        print "treci!"
         lat = result_touple[1]
         lon = result_touple[2] - 0.01
 
     elif(rand == 4):
-        print "cetvrti!"
         lat = result_touple[1] - 0.01
         lon = result_touple[2]
 
     if not checkLatLonValues(lat, lon):
         lat = result_touple[1] 
         lon = result_touple[2]
-        print "else!"
     
     random_id = result_touple[0]
 
